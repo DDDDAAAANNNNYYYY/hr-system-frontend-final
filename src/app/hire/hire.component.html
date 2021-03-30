@@ -1,0 +1,130 @@
+<form>
+    <div>
+        <label for="email">Send Register Invitation : </label>
+        <input type="text" name="email"  [(ngModel)]="email" >
+        <button type="submit" (click)="onSend()">send</button>
+    </div>
+</form>
+<hr>
+
+<p> Onboarding Form Need to be Process</p>
+
+<div class='hire onboarding'>
+    <ul *ngFor="let form of OnboardingForms; let i = index">
+        <hr>
+        Name: {{form.firstName}} MiddleName: {{form.middleName}}  {{form.lastName}}
+        Preferred Name: {{form.preferredName}} <br>
+        Birthday: {{form.birthday}} 
+        Gender: {{form.gender}} <br>
+        Email: {{form.email}}  Cellphone: {{cellphone}} <br>
+        Address: {{form.address}}   <br>
+        Avatar: <img src="{{form.avatar}}" [ngStyle]="{'width': '40px'}"> 
+        Driver License Number: {{form.driverLicenseNumber}}<br>
+        Driver License Expiration Date: {{form.driverLicenseExpirationDate}} <br>
+        <!-- Green Card or Citizen: {{form.greenCardOrCitizen}} -->
+        Has Diver License: {{form.hasDriverLicense}} 
+        <div *ngIf="referred=='Yes'">
+            referName: {{form.referFirstName}} {{form.referMiddleName}} {{form.referLastName}} 
+            <!-- referAddress: {{form.referAddress}}   -->
+            referEmail: {{form.referEmail}}  
+            referPhone: {{form.referPhone}}  
+            referRelationship: {{form.referRelationship}}    
+        </div>
+        ssn: {{form.ssn}} 
+        work Auth: {{form.workAuth}}
+        workAuthFile: {{form.workAuthFile}}<br>
+        Is Citizen Or Perminent Recident: {{form.isCitizenOrPerm}} 
+        <!-- workAuthOther: {{form.workAuthOther}} -->
+        workAuthOtherStart: {{form.workAuthOtherStart}}
+        workPhone: {{form.workPhone}}
+
+
+
+
+
+
+    </ul>
+
+</div>
+
+<!-- <div class='hire onboarding'> -->
+    <!-- <ul *ngFor="let form of OnboardingForms; let i = index"> -->
+       
+      
+        <!-- </br>
+        
+        </br>
+        </br>
+        </br>
+
+        
+
+            </br>
+          </br>
+          </br>
+         -->
+        <!-- workAuthOtherEnd: {{workAuthOtherEnd}} 
+          </br>
+            </br>
+
+        Emergency Contact:
+        <ul *ngFor="let form of emergencyContacts; let i = index">
+            title: {{title}}    </br>
+            contactsName: {{contactsName}}  </br>
+            contactsEmail: {{contactEmail}} </br>
+            relationship: {{relationship}}  </br>
+            
+            employeeID: {{employeeID}}  </br>
+            id: {{id}}  </br> -->
+        <!-- </ul> -->
+
+    <!-- </ul> -->
+
+<!-- </div>  -->
+
+
+<!-- address: "105 street, NY, US"
+avatar: "https://bfsteamproject.s3.us-east-2.amazonaws.com/bili.jpg"
+birthday: "1991-01-01T00:00:00.000+00:00"
+cellPhone: "1234567"
+driverLicenseExpirationDate: "2030-01-01T00:00:00.000+00:00"
+driverLicenseNumber: "123456"
+email: "admin@gmail.com"
+emergencyContacts: Array(1)
+0:
+contactEmail: null
+contactsName: null
+employeeID: 1
+id: 2
+isEmergency: 1
+isLandlord: 0
+isReference: 0
+phone: null
+relationship: "father"
+title: "te"
+__proto__: Object
+length: 1
+__proto__: Array(0)
+firstName: "Tony"
+gender: "Male"
+greenCardOrCitizen: null
+hasDriverLicense: null
+isCitizenOrPerm: "Yes"
+lastName: "Stark"
+middleName: "Richard"
+preferredName: "Iron Man"
+referAddress: null
+referEmail: null
+referFirstName: null
+referLastName: null
+referMiddleName: null
+referPhone: null
+referRelationship: null
+referred: "No"
+ssn: "12233444"
+workAuth: "OPT EAD"
+workAuthFile: "test/testupload.txt"
+workAuthOther: null
+workAuthOtherEnd: "2008-08-08 20:00:00.0"
+workAuthOtherStart: "2008-08-08 20:00:00.0"
+workPhone: "123456" -->

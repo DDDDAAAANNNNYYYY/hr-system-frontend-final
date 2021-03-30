@@ -1,0 +1,15 @@
+<p>register page works!</p >
+    <label for="email">Email:</label><br>
+    <input type="email" name="email" value= {{model.email}}  disabled><br><br>
+    <div>
+        <form><div>
+        <label for="username">Username</label><br>
+        <input type="text" name="username"  [(ngModel)]="model.username" required>
+    </div>
+        <div>
+        <label for="password">Password</label><br>
+        <input type="password" name="password" [(ngModel)]="model.password" required>
+            </div>
+            <button type="submit" (click)="onSubmit()" >Register</button>
+        </form>
+    </div>

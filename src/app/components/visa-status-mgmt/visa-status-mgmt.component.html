@@ -1,0 +1,58 @@
+<br>
+<div>VISA STATUS MANAGE PORT</div>
+<div class="currentVisaStatus"> Current Visa Status: {{currentVisaStatus}}</div>
+
+<form [formGroup] = "visaForm" (ngSubmit)="onSubmit(visaForm)">
+<label for="changeStatus">Change your visa status:</label>
+<select name="changeStatus" formControlName="changeStatus">
+    <option value="OPTReceipt">OPT Receipt</option>
+    <option value="OPT EAD">OPT EAD</option>
+    <option value="I-983">I-983</option>
+    <option value="I-20">I-20</option>
+    <option value="OPT STEM Receipt">OPT STEM Receipt</option>
+    <option value="OPT STEM EAD">OPT STEM EAD</option>
+</select>
+<button type="submit">Submit</button>
+</form>
+<br>
+<br>
+<br>
+<div>NOTIFICATION CENTER</div>
+<br>
+<div > 
+    <div [ngSwitch]="notification">
+     
+        <div *ngSwitchCase="'OPT EAD'">Next Step: Please upload a copy of your OPT EAD
+            <br>
+            <br>please submit your I-983
+            <label class="btn btn-default">
+                <input type="file" (change)="selectFile($event)">
+            </label>
+            <!-- <div type="hidden" [filename]="I-20"></div> -->
+            
+            <button class="btn btn-success" [disabled]="!selectedFiles" (click)="UploadDoc()">Upload</button>
+
+        </div>
+        <div *ngSwitchCase="'OPTSTEMEAD'">Next Step: Please upload a copy of your OPT STEM EAD</div>
+        <div *ngSwitchCase="'I983'">Next Step: Please download and fill your I-983 form
+            <br>
+            <a href="https://www.ice.gov/doclib/sevis/pdf/i983.pdf ">I-983 Template</a><br>
+            <a href="https://ois.usc.edu/files/2020/07/Sample-I-983-for-USC-Graduates-Rev-07-01-2020.pdf">I-983 Sample</a>
+            <br>please submit your I-983
+   
+            <label class="btn btn-default">
+                <input type="file" (change)="selectFile($event)">
+            </label>
+            
+            <button class="btn btn-success" [disabled]="!selectedFiles" (click)="uploadDoc()">Upload</button>
+    
+        </div>
+        <div *ngSwitchCase="'I-20'">Next Step: upload OPT STEM Receipt</div>
+        <div *ngSwitchCase="'OPT STEM Receipt'">Next Step: uPlease upload a copy
+            of your OPT STEM EAD</div>
+    
+        <div *ngSwitchDefault> No Message, You are all set!
+        </div>
+    </div>
+        <!-- <p *ngIf="[currentVisaStatus]==OPT"> NO DISPLAY </p> -->
+</div>

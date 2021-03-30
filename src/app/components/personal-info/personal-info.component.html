@@ -1,0 +1,83 @@
+<!-- <p>personal-info works!</p><br><hr>
+<app-name-section></app-name-section><br><hr>
+<app-address-section></app-address-section><br><hr>
+<app-contact-section></app-contact-section><br><hr>
+<app-employment-section></app-employment-section><br><hr>
+<app-emergency-section></app-emergency-section><br><hr>
+<app-document-section></app-document-section><br><hr>
+<div>
+    <li >
+     {{person.name}}</li>
+     <br>
+     <li>
+        {{person.email}}
+     </li>
+     
+     
+
+</div>
+<div>test</div>
+<app-file-upload>test upload</app-file-upload> -->
+<p></p ><br><hr>
+   <!-- <app-name-section></app-name-section><br><hr>
+   <app-address-section></app-address-section><br><hr>
+   <app-contact-section></app-contact-section><br><hr>
+   <app-employment-section></app-employment-section><br><hr>
+   <app-emergency-section></app-emergency-section><br><hr>
+   <app-document-section></app-document-section><br><hr> -->
+
+   <div class = "name-section">
+    <img src="{{person.avatar}}" [ngStyle]="{'width': '40px'}">  
+   <p>Name: {{person.name}}
+   <p>Preferred Name:{{person.preferredName}}<br>
+  
+    
+   <!-- <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> <br/> -->
+   <!-- <input type='file' (change)="onSelectFile($event)">   -->
+   <!-- <img src="https://bfsteamproject.s3.us-east-2.amazonaws.com/bili.jpg" [ngStyle]="{'width': '40px'}"/> -->
+   <p>Date of Birth:  {{person.dob}}
+   <p>Gender: {{person.gender}}
+   <p>SSN: {{person.ssn}}
+   </div>
+   <br>
+   <div class ="address-secion">
+   <p>Primary Address: {{person.primaryAddress}}
+   <p>Secondary Address: {{person.secondaryAddress}}
+   </div>
+   
+   <div class = "contact-section">
+   <p>Personal Email: {{person.personalEmail}}
+   <p>Work Email: {{person.email}}
+   <p>Cell Phone: {{person.cellPhone}}
+   <p>Work Phone: {{person.workPhone}}
+   </div>
+   <br>
+   <div class ="employment-section">
+   <p>Work Authorization： {{person.workAuth}}
+   <p>Work Authorization Start Date: {{person.workAuthOtherStart}}
+   <p>Work Authorization End Date: {{person.workAuthOtherEnd}}
+   <p>Employment Start Date: {{person.employmentStart}}
+   <p>Employment End Date: {{person.employmentEnd}}
+   <p>Employment Title: {{person.employmentTitle}}
+   </div>
+   <br>
+   
+   <p>Emergencey Contacts</p>
+   <div class = "emergency-section">
+       <ul *ngFor="let list of person.contacts; let i = index">
+          
+           employee ID: {{list.employeeID}}
+           ID: {{list.id}}
+           IsEmergency: {{list.isEmergency}}
+           IsLandlord:{{list.isLandlord}}
+           isReference:{{list.isReference}}
+           relationship:{{list.relationship}}
+           title:{{list.title}}
+           </ul>
+   </div>
+   
+   <!-- <div>test</div>
+   <app-file-upload>test upload</app-file-upload> -->
+   
+   <script>
+   </script>

@@ -1,0 +1,18 @@
+<h1>Our Angular Application</h1>
+<nav>
+  <ul>
+    <li *ngIf="auth.isLoggedin()"><a routerLink="/dashboard">DASHBOARD</a ></li>
+    <li *ngIf="!auth.isLoggedin()"><a routerLink="/login" >LOGIN</a ></li>
+    <li *ngIf="auth.isLoggedin()"><a routerLink="/personalinfo">PERSONAL INFO</a ></li>
+    <li *ngIf="auth.isLoggedin()"><a routerLink="/visa">VISA MANAGEMENT</a ></li>
+    <li *ngIf="auth.isLoggedin()"><a routerLink="/housing">HOUSING</a ></li>
+
+      <li *ngIf="auth.isHR()"> <a routerLink="/hire">HIRE </a></li>
+    <!-- <li *ngIf="auth.isLoggedin()" ><a routerLink="/onboardingform">ONBOARDINGFORM</a ></li> -->
+  </ul>
+  <a *ngIf="auth.isLoggedin()" routerLink="/logout">LOGOUT</a >
+  
+
+  </nav>
+<router-outlet></router-outlet>
+<!-- <app-hrcomponent></app-hrcomponent> -->

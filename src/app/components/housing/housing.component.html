@@ -1,0 +1,51 @@
+<p>housing works!</p >
+    <hr>
+    <!-- <app-housing-detail></app-housing-detail>
+    <hr>
+    <app-facility-reporting></app-facility-reporting> -->
+    <div class = "house-detail-page">
+    <label for="address">Address: </label>
+    <p>{{houseDetail.address.addressLine1}}, {{houseDetail.address.addressLine2}}, {{houseDetail.address.city}}, {{houseDetail.address.stateAbbr}}, {{houseDetail.address.stateName}} {{houseDetail.address.zipcode}}</p >
+    <div class ="employees">
+    <label for="emplyees">Employees: </label>
+    <ul *ngFor="let employee of houseDetail.occupantList; let i = index">
+        {{employee.name}}
+        {{employee.phoneNumber}}
+    </ul>
+    </div>
+    </div>
+    <hr>
+    
+    
+    <div class = "facilty-report">
+        <ul *ngFor= "let facilityreport of facilityReportandDetail; let i = index"> 
+            <li>Title: {{facilityreport.facilityReport.title}}<br> Description: {{facilityreport.facilityReport.description}} <br> Created By: {{facilityreport.username}} <br> Report Date: {{facilityreport.facilityReport.reportDate}} <br>
+            Status: {{facilityreport.facilityReport.status}} <br>
+                <ul *ngFor ="let detail of facilityreport.details; let j = index"> 
+                    <li>
+                        {{detail.username}} commented: {{detail.facilityReportDetail.comment}} on {{detail.facilityReportDetail.lastModificationDate}}<br>
+                        </li>
+                </ul>
+    
+                <!-- username is : {{username}}
+                {{facilityreport.username}} -->
+                <div #temp value = {{facilityreport.facilityReport.id}}> 
+                <form *ngIf="username == facilityreport.username">
+                <input type="text" id = "comment" name = "comment" #comment>
+                        <button type="submit" (click)='addComment(temp.value, comment.value, username)'>Add Comment</button>
+                        <br>
+                        </form>
+                        </div>
+            </li>
+        </ul>
+        <hr>
+
+        <p>Add new report</p >
+            <form>
+            <label>Title: </label><br>
+            <input type="text" name = "title" [(ngModel)]="addFacilityReportModel.title">
+            <br>
+            <label>Description: </label><br>
+            <input type="text" name = "description" [(ngModel)]="addFacilityReportModel.description">
+            <button type="submit" (click)="addFacilityReport()">Submit Report</button>
+            </form>

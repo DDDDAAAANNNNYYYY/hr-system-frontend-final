@@ -1,0 +1,26 @@
+Avadar :
+<label class="btn btn-default">
+    <input type="file" (change)="selectFile($event)">
+</label>
+
+<button class="btn btn-success" [disabled]="!selectedFiles" (click)="uploadAvadar()">Upload</button>
+
+
+<br>
+DriverLicense:
+<label class="btn btn-default">
+    <input type="file" (change)="selectFile($event)">
+
+</label> 
+<!-- <a href="{{sessionStorage.getItem('DriverLicense')">License Doc</a> -->
+
+<button class="btn btn-success" [disabled]="!selectedFiles" (click)="uploadDriverLiscen()">Upload</button>
+
+<br>
+Work Authorization:
+<label class="btn btn-default">
+    <input type="file" (change)="selectFile($event)">
+</label>
+
+<button class="btn btn-success" [disabled]="!selectedFiles" (click)="uploadWorkAuth()">Upload</button>
+<!-- <button type="submit"[disabled]="!onboardingForm.valid">Submit</button> -->
